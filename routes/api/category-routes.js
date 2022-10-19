@@ -38,8 +38,16 @@ router.put('/:id', (req, res) => {
     where: {
       id: req.params.id,
     }
+  }).then((a) => {
+    res.json(a)
+  }).catch((err) => {
+    res.json(err)
   })
 });
+
+
+
+
 
 router.delete('/:id', (req, res) => {
   Category.destroy({
